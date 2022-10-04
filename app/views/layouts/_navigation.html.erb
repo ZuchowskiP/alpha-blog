@@ -1,8 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand" >
-    <a class="navbar-item" href=<%= root_path %> id="logo">
-      Alpha Blog
-    </a>
+    <%= link_to "Alpha Blog", root_path, class: "navbar-item", id: "logo" %>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -13,9 +11,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href= <%= articles_path %>>
-        Articles
-      </a>
+      <%= link_to "Articles", articles_path, class: "navbar-item" %>
 
       <a class="navbar-item">
         Documentation

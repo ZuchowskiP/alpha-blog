@@ -1,8 +1,26 @@
-<h1>Showing article details</h1>
+<h1 class="has-text-centered title mt-4">Showing article details</h1>
+<div class="container">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        <%= @article.title %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <%= @article.description %>
+        <br>
+        Created <%= time_ago_in_words(@article.created_at) %> ago,
+        edited <%= time_ago_in_words(@article.updated_at) %> ago.
+      </div>
+    </div>
+    <footer class="card-footer">
+      <%= link_to 'Edit', edit_article_path(@article), class: "card-footer-item"%>
+      <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "card-footer-item" %>
+    </footer>
+  </div>
+</div>
 
-<p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}%> |
-<%= link_to 'Return', articles_path %>
+<div class="buttons container">
+  <%= link_to "Return", articles_path, class: "button is-primary" %>
+</div>
