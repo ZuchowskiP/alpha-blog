@@ -85,6 +85,22 @@ body {
 
 .label {
   color: white !important;
+  width: 10% !important;
+  align-self: center;
+}
+
+.field{
+  display: flex !important;
+  text-align: left !important;
+}
+
+.field.is-grouped{
+  margin-left: 9% !important;
+}
+
+.textarea{
+  min-width: 80% !important;
+  max-width: 100% !important;
 }
 
 ul{
