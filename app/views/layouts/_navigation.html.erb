@@ -25,6 +25,20 @@
           <% end %>
         </div>
       </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Categories
+        </a>
+
+        <div class="navbar-dropdown">
+          <%= link_to "Show all categories", categories_path, class: "navbar-item" %>
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to "Create new category", new_category_path, class: "navbar-item" %>
+          <% end %>
+        </div>
+      </div>
+
       <% if logged_in? %>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
@@ -38,6 +52,7 @@
           </div>
         </div>
       <% end %>
+
     </div>
 
 
