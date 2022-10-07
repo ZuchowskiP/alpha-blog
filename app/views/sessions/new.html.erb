@@ -1,8 +1,8 @@
-<h1 class="has-text-centered is-2 title mt-4">Sign up for Alpha BLog</h1>
+<h1 class="has-text-centered is-2 title mt-4">Log in</h1>
 
 <div class="container">
   <div class="hero p-5">
-    <%= form_with(scope: :session, url: login_path) do |f| %>
+    <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
       <div class="field">
         <%= f.label :email, class: "title label" %>
         <%= f.email_field :email, class: "control input", placeholder: 'Enter your email' %>
