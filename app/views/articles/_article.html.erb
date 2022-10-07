@@ -4,7 +4,7 @@
       <header class="card-header">
         <p class="card-header-title">
           <%= link_to article.title, article %> <br>
-          by <%= article.user.username %>
+          by <%= link_to article.user.username, article.user %>
         </p>
       </header>
       <div class="card-content">

@@ -4,7 +4,8 @@
     <header class="card-header">
       <p class="card-header-title">
         <%= @article.title %> <br>
-        by <%= @article.user.username %>
+        by <%= link_to @article.user.username, @article.user %>
+        <%= link_to gravitar_for(@article.user), @article.user %>
       </p>
     </header>
     <div class="card-content">
