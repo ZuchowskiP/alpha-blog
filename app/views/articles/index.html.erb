@@ -1,7 +1,13 @@
 <h1 class="has-text-centered title is-2 mt-4">Listing all articles</h1>
 
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
 <%= render 'article' %>
 
 <div class="buttons container">
   <%= link_to "Create a new article", new_article_path, class: "button is-primary" %>
+</div>
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
 </div>

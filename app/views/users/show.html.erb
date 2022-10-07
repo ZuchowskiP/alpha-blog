@@ -7,7 +7,13 @@
 </div>
 
 <h3 class="has-text-centered title is-4 mt-4">Articles</h3>
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
 
 <%= render 'articles/article' %>
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
 
 
