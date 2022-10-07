@@ -1,0 +1,9 @@
+<h1 class="has-text-centered title is-2 mt-4"><%= @user.username %> profile</h1>
+
+<%= gravitar_for @user, size: 200 %>
+
+<h3 class="has-text-centered title is-4 mt-4">Articles</h3>
+
+<%= render 'articles/article' %>
+
+
