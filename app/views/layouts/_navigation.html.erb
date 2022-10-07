@@ -20,16 +20,30 @@
 
         <div class="navbar-dropdown">
           <%= link_to "List all articles", articles_path, class: "navbar-item" %>
-          <%= link_to "Create new article", new_article_path, class: "navbar-item" %>
+          <% if logged_in? %>
+            <%= link_to "Create new article", new_article_path, class: "navbar-item" %>
+          <% end %>
         </div>
       </div>
+      <% if logged_in? %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Profile [<%= current_user.username %>]
+          </a>
+
+          <div class="navbar-dropdown">
+            <%= link_to "View your profile", user_path(current_user), class: "navbar-item" %>
+            <%= link_to "Edit account", edit_user_path(current_user), class: "navbar-item" %>
+          </div>
+        </div>
+      <% end %>
     </div>
+
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
           <% if logged_in? %>
-            <%= link_to current_user.username, current_user, class: "button is-normal" %>
             <%= link_to 'Log out', logout_path, method: :delete, class: "button is-danger" %>
           <% else %>
             <%= link_to 'Sign up', signup_path, class:"button is-primary" %>
