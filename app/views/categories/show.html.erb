@@ -1,1 +1,18 @@
 <h1 class="has-text-centered is-2 title mt-4">Category <%= @category.name %></h1>
+
+<div class="has-text-centered mt-4">
+  <% if logged_in? and current_user.admin? %>
+    <%= link_to "Edit category name", edit_category_path(@category), class: "button is-info is-outlined" %>
+  <% end %>
+</div>
+
+<h3 class="has-text-centered title is-4 mt-4">Articles</h3>
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
+
+<%= render 'articles/article' %>
+
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
