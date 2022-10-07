@@ -28,7 +28,7 @@
       <% if logged_in? %>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            Profile [<%= current_user.username %>]
+            <%= "(Admin)" if current_user.admin? %> Profile [<%= current_user.username %>]
           </a>
           <div class="navbar-dropdown">
             <%= link_to "View your profile", user_path(current_user), class: "navbar-item" %>

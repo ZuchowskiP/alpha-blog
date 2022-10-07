@@ -21,8 +21,14 @@
       </div>
       <footer class="card-footer">
         <%= link_to 'View profile', user, class: "card-footer-item" %>
-        <% if logged_in? && user == current_user %>
-          <%= link_to 'Edit profile', edit_user_path(user), class: "card-footer-item"%>
+        <% if logged_in? %>
+          <% if user == current_user %>
+            <%= link_to 'Edit profile', edit_user_path(user), class: "card-footer-item"%>
+          <% end %>
+          <% if current_user.admin? %>
+            <%= link_to 'Delete user', user_path(user), class: "card-footer-item has-text-danger", method: :delete,
+                       data: { confirm: "Are you sure you want to delete the user account and all artc"}%>
+          <% end %>
         <% end %>
       </footer>
     </div>
