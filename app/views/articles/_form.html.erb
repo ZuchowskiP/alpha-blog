@@ -11,6 +11,12 @@
           <%= f.label :description, class: "title label" %>
           <%= f.text_area :description, class: "control textarea" %>
         </div>
+        <div class="field">
+          <%= f.label :category, class: "title label" %>
+          <%= f.collection_select(:category_ids, Category.all, :id, :name,
+                                  { prompt: "Make your selection from list below (can be empty)"},
+                                  {multiple: true, class: "select is-multiple control textarea"}) %>
+        </div>
         <div class="field is-grouped">
           <%= f.submit :Submit, class: "control button is-link" %>
           <%= link_to 'Return', articles_path, class: "control button is-link" %>
