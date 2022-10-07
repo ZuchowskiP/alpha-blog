@@ -108,6 +108,15 @@ ul{
   text-align: left !important;
 }
 
+.has-text-danger.navbar-item{
+   color: red !important
+ }
+
+.has-text-danger.navbar-item:hover{
+  background-color: red !important;
+  color: white !important
+}
+
 /* pagination styling */
 .flickr_pagination {
   text-align: center;

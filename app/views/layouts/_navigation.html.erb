@@ -30,10 +30,11 @@
           <a class="navbar-link">
             Profile [<%= current_user.username %>]
           </a>
-
           <div class="navbar-dropdown">
             <%= link_to "View your profile", user_path(current_user), class: "navbar-item" %>
             <%= link_to "Edit account", edit_user_path(current_user), class: "navbar-item" %>
+            <%= link_to "Delete profile", user_path(current_user), class: "has-text-danger navbar-item", method: :delete,
+                                          data: { confirm: "Are you sure?" }%>
           </div>
         </div>
       <% end %>
