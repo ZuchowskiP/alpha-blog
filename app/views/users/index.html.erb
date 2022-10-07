@@ -21,7 +21,9 @@
       </div>
       <footer class="card-footer">
         <%= link_to 'View profile', user, class: "card-footer-item" %>
-        <%= link_to 'Edit profile', edit_user_path(user), class: "card-footer-item"%>
+        <% if logged_in? && user == current_user %>
+          <%= link_to 'Edit profile', edit_user_path(user), class: "card-footer-item"%>
+        <% end %>
       </footer>
     </div>
   </div>
